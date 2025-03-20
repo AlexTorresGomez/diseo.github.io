@@ -93,12 +93,33 @@ section {
 #galeria img:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    animation: destello 20s ease-in-out infinite;
+}
+@keyframes destello {
+    0% {
+        filter: brightness(1);
+    }
+    50% {
+        filter: brightness(1.5);
+    }
+    100% {
+        filter: brightness(1);
+    }
 }
 
 /* Promoció y Ofertes */
 #promocio, #ofertes {
-    background-color: #dcedc8;
-    color: #388e3c;
+    background-color: red;
+    color: white;
+    transition: background-color 0.1s ease, color 0.1s ease;
+    animation: cambioInesperado 3s infinite alternate;
+}
+
+/* Animación para cambiar colores sin control */
+@keyframes cambioInesperado {
+    0% { background-color: red; color: white; }
+    50% { background-color: blue; color: yellow; }
+    100% { background-color: green; color: black; }
 }
 
 #promocio h2, #ofertes h2 {
@@ -128,10 +149,9 @@ section {
 form {
     display: inline-block;
     text-align: left;
-    background-color: #f1f8e9;
+  
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+   
     margin-top: 20px;
 }
 
@@ -152,7 +172,7 @@ form input, form textarea {
 
 form button {
     padding: 10px 20px;
-    background-color: #4CAF50;
+    background-color: red;
     color: white;
     border: none;
     border-radius: 5px;
@@ -225,4 +245,3 @@ footer p {
         margin: 10px 0;
     }
 }
-
